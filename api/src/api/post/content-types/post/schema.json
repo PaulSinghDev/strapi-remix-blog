@@ -44,6 +44,12 @@
       "type": "string",
       "regex": "^[a-zA-Z0-9 ]+(?:,[a-zA-Z0-9 ]+)*$",
       "required": true
+    },
+    "Categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "post"
     }
   }
 }
