@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_additional_data_post_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "minLength": 50,
+      "maxLength": 155
+    },
+    "ShareImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Keywords": {
+      "type": "string",
+      "regex": "^[a-zA-Z0-9 ]+(?:,[a-zA-Z0-9 ]+)*$",
+      "required": true
+    }
+  }
+}

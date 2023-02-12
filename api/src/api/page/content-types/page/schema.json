@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "pages",
   "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "Post",
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
     "description": ""
   },
   "options": {
@@ -14,35 +14,29 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "required": true,
-      "minLength": 5
+      "required": true
     },
     "Slug": {
       "type": "uid",
       "targetField": "Title",
       "required": true
     },
-    "FeaturedImage": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "Content": {
       "type": "richtext",
       "required": true
+    },
+    "FeaturedImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "SEO": {
       "type": "component",
       "repeatable": false,
       "component": "additional-data.post-seo",
-      "required": true
-    },
-    "Tags": {
-      "type": "string",
-      "regex": "^[a-zA-Z0-9 ]+(?:,[a-zA-Z0-9 ]+)*$",
       "required": true
     }
   }
