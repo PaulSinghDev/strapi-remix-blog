@@ -6,10 +6,10 @@ import {
 import { useLoaderData } from "@remix-run/react";
 import Markdown from "react-markdown";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: `${data[0]?.Title}` },
+    { name: "description", content: `You are now reading ${data[0]?.Title}` },
   ];
 };
 
@@ -32,7 +32,6 @@ export const loader: LoaderFunction = async ({
 export default function Index() {
   const [post] = useLoaderData<any[]>();
 
-  console.log(post);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <img
