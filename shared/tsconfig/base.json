@@ -15,11 +15,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["apps/*", "apps/frontend/*", "apps/frontend/app/*"]
-    }
+    "strictNullChecks": true
   },
   "exclude": ["node_modules"]
 }

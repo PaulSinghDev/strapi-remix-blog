@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/remix.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "~/*": ["app/*", "frontend/app/*", "apps/frontend/app/*"]
