@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async ({
     `http://127.0.0.1:1337/api/posts?filters[Slug]=${slug}&populate=*`
   );
   const response = await posts.json();
-  const structuredData = response?.data?.map((datum) => ({
+  const structuredData = response?.data?.map((datum: any) => ({
     ...datum.attributes,
     id: datum.id,
   }));

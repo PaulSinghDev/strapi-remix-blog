@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "turbo dev"
@@ -12,10 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.52.0",
+    "eslint-config-custom": "*",
     "prettier": "^3.0.3",
-    "turbo": "^1.10.16",
-    "tsconfig": "workspace:*",
-    "eslint-config-custom": "workspace:*"
+    "tsconfig": "*",
+    "turbo": "^1.10.16"
   },
   "workspaces": [
     "apps/*",

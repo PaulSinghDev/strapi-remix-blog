@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async () => {
   const posts = await fetch("http://127.0.0.1:1337/api/posts");
   const response = await posts.json();
-  const structuredData = response?.data?.map((datum) => ({
+  const structuredData = response?.data?.map((datum: any) => ({
     ...datum.attributes,
     id: datum.id,
   }));
