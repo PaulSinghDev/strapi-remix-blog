@@ -12,17 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true,
       "minLength": 5
     },
-    "Slug": {
+    "slug": {
       "type": "uid",
-      "targetField": "Title",
       "required": true
     },
-    "FeaturedImage": {
+    "featuredImage": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -30,26 +29,26 @@
         "images"
       ]
     },
-    "Content": {
+    "content": {
       "type": "richtext",
       "required": true
     },
-    "SEO": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "additional-data.post-seo",
       "required": true
     },
-    "Tags": {
+    "tags": {
       "type": "string",
       "regex": "^[a-zA-Z0-9 ]+(?:,[a-zA-Z0-9 ]+)*$",
       "required": true
     },
-    "Categories": {
+    "category": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "post"
+      "relation": "manyToOne",
+      "target": "api::post-category.post-category",
+      "inversedBy": "posts"
     }
   }
 }

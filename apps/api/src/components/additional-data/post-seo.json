@@ -6,17 +6,17 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "text",
       "required": true,
       "minLength": 50,
       "maxLength": 155
     },
-    "ShareImage": {
+    "shareImage": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -24,7 +24,7 @@
         "images"
       ]
     },
-    "Keywords": {
+    "keywords": {
       "type": "string",
       "regex": "^[a-zA-Z0-9 ]+(?:,[a-zA-Z0-9 ]+)*$",
       "required": true

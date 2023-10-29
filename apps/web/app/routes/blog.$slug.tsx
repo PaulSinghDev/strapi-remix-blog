@@ -8,8 +8,8 @@ import Markdown from "react-markdown";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
-    { title: data[0]?.seo.title },
-    { name: "description", content: data[0]?.seo?.description },
+    { title: `${data[0]?.seo.title}` },
+    { name: "description", content: data[0]?.seo.description },
   ];
 };
 
@@ -19,7 +19,7 @@ export const loader: LoaderFunction = async ({
 }: LoaderFunctionArgs) => {
   const slug = params.slug;
   const posts = await fetch(
-    `http://127.0.0.1:1337/api/pages?filters[slug]=${slug}&populate=*`
+    `http://127.0.0.1:1337/api/posts?filters[slug]=${slug}&populate=*`
   );
   const response = await posts.json();
   const structuredData = response?.data?.map((datum: any) => ({
@@ -30,18 +30,18 @@ export const loader: LoaderFunction = async ({
 };
 
 export default function Index() {
-  const [page] = useLoaderData<any[]>();
-
+  const [post] = useLoaderData<any[]>();
+  console.log(post);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <img
         width={200}
         height={200}
-        alt={page.featuredImage?.data?.attributes.alternativeText || page.title}
-        src={`http://127.0.0.1:1337${page.featuredImage?.data?.attributes?.formats?.small.url}`}
+        alt={post.featuredImage?.data?.attributes.alternativeText || post.title}
+        src={`http://127.0.0.1:1337${post.featuredImage?.data?.attributes?.formats?.small.url}`}
       />
-      <h1>{page.title}</h1>
-      <Markdown>{page.content}</Markdown>
+      <h1>{post.title}</h1>
+      <Markdown>{post.content}</Markdown>
     </div>
   );
 }

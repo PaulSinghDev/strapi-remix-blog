@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_products_prices",
+  "info": {
+    "displayName": "Price",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "pounds",
+        "euros",
+        "dollars"
+      ],
+      "required": true,
+      "default": "pounds"
+    },
+    "value": {
+      "type": "string",
+      "regex": "^\\d+\\.\\d{2}$",
+      "required": true,
+      "default": "0.00",
+      "minLength": 4
+    }
+  }
+}
